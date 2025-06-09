@@ -24,7 +24,5 @@ vendor/
 
 # mbaigo
 *.json
-go.mod
-go.sum
 serviceRegistry.db
 *.pem

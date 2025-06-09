@@ -1,0 +1,4 @@
+github.com/lmas/mbaigo v0.1.0-handoff h1:kkS+IpEmp7T6B7gQpfK8P3ugqdJpBjcmJ4bf8S3FbQo=
+github.com/lmas/mbaigo v0.1.0-handoff/go.mod h1:7MxtqAn9Xa4C6X8Z2alRexn7PwYB+9Vg89E3+C3YalQ=
+golang.org/x/exp v0.0.0-20250606033433-dcc06ee1d476 h1:bsqhLWFR6G6xiQcb+JoGqdKdRU6WzPWmK8E0jxTjzo4=
+golang.org/x/exp v0.0.0-20250606033433-dcc06ee1d476/go.mod h1:3//PLf8L/X+8b4vuAfHzxeRUl04Adcb341+IGKfnqS8=
