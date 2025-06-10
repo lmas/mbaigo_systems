@@ -19,6 +19,10 @@ RUN go build -o system
 # Setup a clean container without any build tools that takes up unnecessary space
 FROM alpine:3.22 AS final
 
+LABEL org.opencontainers.image.source=https://github.com/lmas/mbaigo_systems
+LABEL org.opencontainers.image.licenses=MIT
+LABEL org.opencontainers.image.description="This system offers as a service the temperature measured by a 1-wire digital thermometer."
+
 # Install dependencies
 RUN apk add curl
 
