@@ -27,7 +27,7 @@ LABEL org.opencontainers.image.description="The Orchestrator system is one of th
 RUN apk add curl
 
 # Copy built files from the previous builder environment
-COPY --from=builder /src/system /
+COPY --from=builder /src/system /orchestrator
 WORKDIR /data
 
 # Set the default port used by the system (and allows being changed by user)
@@ -37,4 +37,4 @@ ENV PORT=20103
 HEALTHCHECK --interval=1m CMD curl -f "http://localhost:$PORT/" || exit 1
 
 # Run the system
-CMD ["/system"]
+CMD ["/orchestrator"]
