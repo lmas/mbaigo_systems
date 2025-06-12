@@ -1,0 +1,34 @@
+# Documentation: https://docs.docker.com/reference/compose-file/
+#
+# WARN: using the host's network is highly discouraged, as it exposes the docker
+# setup, network, etc. to the local host thus breaking separation and lowering
+# security.
+# Source: https://stackoverflow.com/a/43554707
+# 
+# But service discovery defaults to localhost in mbaigo, so this setup defaults
+# to that too. A production system should use other network settings.
+  
+version: "3"
+services:
+  registrar:
+    network_mode: "host" # CHANGEME
+    image: ghcr.io/lmas/mbaigo_systems/esr:0.1.0
+    volumes:
+      - ./data/registrar:/data
+
+  orchestrator:
+    network_mode: "host" # CHANGEME
+    image: ghcr.io/lmas/mbaigo_systems/orchestrator:0.1.0
+    depends_on:
+      - registrar
+    volumes:
+      - ./data/orchestrator:/data
+
+  ds18b20:
+    network_mode: "host" # CHANGEME
+    image: ghcr.io/lmas/mbaigo_systems/ds18b20:0.1.0
+    depends_on:
+      - registrar
+      - orchestrator
+    volumes:
+      - ./data/ds18b20:/data
